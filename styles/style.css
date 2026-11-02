@@ -111,6 +111,9 @@ a {
   color: var(--muted);
   line-height: 2;
 }
+.section-pad {
+  padding-block: 60px;
+}
 
 /* Start Header */
 .header {
@@ -218,16 +221,16 @@ a {
   grid-template-columns: 1fr;
   gap: 0;
 }
-.process-list li div{
+.process-list li div {
   display: flex;
   align-items: baseline;
 }
 .process-list h3 {
   margin-right: 5px;
-  font-size: 15px;
+  font-size: 16px;
 }
 .process-list p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 2;
   margin: 0;
@@ -243,8 +246,49 @@ a {
   background-color: var(--white);
   border-radius: 100%;
 }
-
 /* End Process */
+
+/* Start Services */
+.services {
+  background: var(--surface);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px 0;
+}
+.services-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid #e1e6ef;
+  border-radius: var(--radius-sm);
+  transition: .2s;
+}
+.services-card:hover{
+  background-color: var(--white);
+  margin-top: -10px;
+}
+.card-header{
+  display: flex;
+  align-items: baseline;
+}
+.card-header h3 {
+  margin: 15px 10px;
+  font-size: 18px;
+}
+.card-header i{
+  font-size: 18px;
+  color: var(--dark-blue);
+  margin-left: 10px;
+}
+.services-grid p{
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* End Services */
 
 /* Media */
 @media (max-width: 767px) {
@@ -298,10 +342,20 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .section-pad {
+    padding-block: 76px;
+  }
+  /* Header */
   .menu-toggle {
     display: none;
   }
@@ -354,13 +408,23 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    /* Process */
+  .section-pad {
+    padding-block: 104px;
+  }
+  /* Process */
   .process-list {
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(5, 1fr);
     gap: 18px;
   }
 }
